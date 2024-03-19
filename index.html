@@ -6,24 +6,46 @@
   <title>Old Explorer Landing Page</title>
   <style>
     body {
-      background-color: #0078d7; /* Internet Explorer Blue */
-      font-family: 'Courier New', Courier, monospace;
-      color: white;
+      background-color: white;
+      font-family: 'ＭＳ Ｐゴシック', Courier, monospace;
+      color: #333;
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
     }
 
     .container {
       text-align: center;
-      background-color: white;
-      border-radius: 10px;
-      padding: 40px;
-      width: 80%; /* Adjust the width to your preference */
-      max-width: 800px; /* Set a maximum width for better readability */
+      padding: 20px;
+    }
+
+    .browser-tabs {
+      background-color: #f5f5f5;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .browser-tab {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-bottom: none;
+      border-radius: 5px 5px 0 0;
+      padding: 10px 100px; /* Adjusted padding to change tab length */
+      cursor: pointer;
+    }
+
+    .tab-symbols {
+      display: flex;
+      font-family: 'Courier New', Courier, monospace;
+      align-items: center;
+      margin-left: auto; /* Pushes the symbols to the right */
+      padding-right: 20px; /* Adjusted padding for spacing */
+    }
+
+    .tab-symbols span {
+      margin-left: 10px;
     }
 
     h1 {
@@ -33,13 +55,116 @@
     p {
       font-size: 16px;
     }
+
+    /* Hide all tab contents by default */
+    .tab-content {
+      display: none;
+    }
+
+    /* Display the active tab content */
+    .active-content {
+      display: block;
+    }
+
+    /* Remove default list styling */
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Style links */
+    .game-link {
+      color: blue;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Internet_Explorer_9_logo.svg/1200px-Internet_Explorer_9_logo.svg.png" alt="Internet Explorer Logo" width="100">
-    <h1>Internet Explorer</h1>
-    <p>Welcome to the good old days!</p>
+  <!-- Browser tabs -->
+  <div class="browser-tabs">
+    <div class="browser-tab" onclick="showTab(1)">Home</div>
+    <div class="browser-tab" onclick="showTab(2)">About</div>
+    <div class="browser-tab" onclick="showTab(3)">Games</div>
+    <div class="tab-symbols">
+      <span>_</span>
+      <span>□</span>
+      <span>x</span>
+    </div>
   </div>
+
+  <!-- Tab contents -->
+  <div class="container">
+    <div id="tab1" class="tab-content">
+      <h1>Welcome to the Home Page</h1>
+      <p>Check out the latest news about upcoming games and projects currently in development.</p>
+      <h3>Cancelled Games</h3>
+      <p>tinyDungeonNature</p>
+      <p>tinyDungeonAquatic</p>
+      <p>Cubomancy</p>
+      <h3>Seasonal Games</h3>
+      <p>tinyDungeonEaster</p>
+      <p>tinyDungeonHallow</p>
+      <p>tinyDungeonWinter</p>
+      <h2>Finished Games</h2>
+      <p>tinyDungeon</p>
+      <p>tinyPacks</p>
+      <h2>Games in Development</h2>
+      <p>tinytextRPG</p>
+      <p>tinyClicker</p>
+      <h2>Upcoming Games</h2>
+      <p>tinyDungeonQuasar</p>
+      <p>tinyKingdom</p>
+    </div>
+    <div id="tab2" class="tab-content">
+      <h1>tinyKing</h1>
+      <p>tinykingartemis@gmail.com</p>
+      <p>tinyKing 2023</p>
+      <p>"Indie over AAA."</p>
+      <h2>Workers</h2>
+      <ul>
+        <li>CEO: Tristan Balint</li>
+        <li>Lead P.: Tristan Balint</li>
+        <li>Programmer: TBD</li>
+        <li>Programmer: TBD</li>
+        <li>Programmer: TBD</li>
+        <li>Programmer: TBD</li>
+        <li>Lead Graphic D.: TBD</li>
+        <li>Graphic D.: TBD</li>
+        <li>Graphic D.: TBD</li>
+      </ul>
+    </div>
+    <div id="tab3" class="tab-content">
+      <h1>Games</h1>
+			<p>Games Links</p>
+      <h2>Available Games</h2>
+      <ul>
+        <li><a href="https://example.com/game1" class="game-link">tinyDungeon</a></li>
+        <li><a href="https://example.com/game2" class="game-link">tinyPacks</a></li>
+        <li><a href="https://example.com/game3" class="game-link">tinytextRPG</a></li>
+				<h2>Broken Games</h2>
+      <p>tinyDungeon Aquatic</p>
+      <p>tinyClicker</p>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tabNumber) {
+      // Hide all tab contents
+      var tabContents = document.getElementsByClassName("tab-content");
+      for (var i = 0; i < tabContents.length; i++) {
+        tabContents[i].style.display = "none";
+      }
+
+      // Display the active tab content
+      var activeTab = document.getElementById("tab" + tabNumber);
+      activeTab.style.display = "block";
+    }
+
+    // Load page 1 content initially
+    showTab(1);
+  </script>
 </body>
 </html>
