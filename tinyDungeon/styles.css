@@ -1,0 +1,42 @@
+/* Monsters */
+.monsters{
+  margin-top: 60px;
+  color: blue;
+  border-radius: 12px;
+  border: 2px solid #D3D3D3; /* Grey */
+  background-color: white;
+}
+.monsters:active{ 
+   background-color: #D3D3D3;
+}
+/* Monsters */
+
+/* Attack */
+.attackButton{
+  margin-top: 60px;
+  color: red;
+  border-radius: 12px;
+  border: 2px solid #D3D3D3; /* Grey */
+  background-color: white;
+}
+.attackButton:active{ 
+   background-color: #D3D3D3;
+}
+/* Attack */
+
+
+/* Extras */
+#game{
+  text-align:center;
+}
+
+.redText{
+  color: red;
+}
+body{
+   ???
+}
+.player{
+   color: white;
+}
+/* Extras */
