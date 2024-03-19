@@ -12,23 +12,21 @@
   </div>
 
   <div id="game">
-    <!-- Player Info -->
     <div class="info" id="player-info">
       <h2>Player Info</h2>
       <p>Name: <span id="player-name">Loading...</span></p>
       <p>HP: <span id="player-hp">Loading...</span></p>
-      <p>Level: <span id="player-level">Loading...</span></p> <!-- New placeholder for level -->
-      <p>Experience: <span id="player-exp">Loading...</span></p> <!-- New placeholder for experience -->
+      <p>Souls: <span id="player-souls">Loading...</span></p>
+      <p>Level: <span id="player-level">Loading...</span></p>
+      <p>Experience: <span id="player-exp">Loading...</span></p>
     </div>
 
-    <!-- Enemy Info -->
     <div class="info" id="enemy-info">
       <h2>Enemy Info</h2>
       <p>Name: <span id="enemy-name">Loading...</span></p>
       <p>HP: <span id="enemy-hp">Loading...</span></p>
     </div>
 
-    <!-- Weapons Info -->
     <div class="info" id="weapons-info">
       <h2>Weapons</h2>
       <ul id="weapons-list">
@@ -36,14 +34,16 @@
       </ul>
     </div>
 
-    <!-- Actions -->
     <div id="actions">
       <button onclick="attack()">Attack</button>
     </div>
 
-    <!-- Log -->
     <div id="log"></div>
   </div>
+
   <script src="script.js"></script>
+  <script src="player.js"></script>
+  <script src="enemy.js"></script>
+  <script src="weapons.js"></script>
 </body>
 </html>
