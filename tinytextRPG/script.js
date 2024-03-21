@@ -1,3 +1,8 @@
+// Load weapon definitions
+const script = document.createElement("script");
+script.src = "weapons.js";
+document.head.appendChild(script);
+
 // Function to handle attack when the button is clicked
 function attack() {
   const initialEnemyHP = parseInt(document.getElementById("enemy-hp").innerText);
