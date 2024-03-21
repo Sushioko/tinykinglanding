@@ -1,12 +1,12 @@
-// Define shop inventory if it's not already defined
-const shopInventory = shopInventory || [
+// Define shop inventory
+export const shopInventory = [
   { name: "Sword", price: 20, type: "weapon" },
   { name: "Shield", price: 15, type: "armor" }
   // Add more items as needed
 ];
 
 // Function to display available items in the shop
-function displayShopItems() {
+export function displayShopItems() {
   const shopItems = document.getElementById("shopItems");
   shopItems.innerHTML = ""; // Clear previous items
 
@@ -21,6 +21,6 @@ function displayShopItems() {
 }
 
 // Function to handle item purchase
-function purchaseItem(item) {
+export function purchaseItem(item) {
   // Logic for purchasing item
 }
