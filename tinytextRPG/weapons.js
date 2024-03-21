@@ -1,5 +1,5 @@
-// Define weapons information
-const weapons = [
+// Define weapons information if it's not already defined
+const weapons = weapons || [
   {
     name: "Fists",
     damage: { min: 1, max: 3 },
