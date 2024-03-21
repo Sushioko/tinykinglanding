@@ -1,3 +1,4 @@
+User
 body {
   font-family: "American Typewriter", serif;
   background-color: #333;
@@ -29,7 +30,6 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start; /* Align items to the start */
 }
 
 .info {
@@ -51,6 +51,7 @@ button:hover {
 }
 
 /* New styles for the shop modal */
+
 /* Shop Modal */
 .modal {
   display: none; /* Hidden by default */
@@ -85,13 +86,4 @@ button:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-
-/* New styles for buttons */
-#actions {
-  width: 100%;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
