@@ -11,6 +11,6 @@ const weapons = [
   {
     name: "Axe",
     damage: { min: 7, max: 12 },
-  },
+  }
   // Add more weapons as needed
 ];
