@@ -1,5 +1,5 @@
 // Define weapons information
-export const weapons = [
+const weapons = [
   {
     name: "Fists",
     damage: { min: 1, max: 3 },
@@ -11,6 +11,6 @@ export const weapons = [
   {
     name: "Axe",
     damage: { min: 7, max: 12 },
-  }
+  },
   // Add more weapons as needed
 ];
