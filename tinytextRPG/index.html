@@ -1,3 +1,4 @@
+User
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
 <body>
   <div id="header">
     <h1>Text-based RPG</h1>
+    <button id="shopBtn">Shop</button> <!-- Shop button -->
   </div>
 
   <div id="game">
@@ -31,6 +33,17 @@
 
     <div id="actions">
       <button onclick="attack()">Attack</button>
+    </div>
+
+    <!-- Shop Modal -->
+    <div id="shopModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Shop</h2>
+        <ul id="shopItems">
+          <!-- Shop items will be dynamically added here -->
+        </ul>
+      </div>
     </div>
   </div>
 
