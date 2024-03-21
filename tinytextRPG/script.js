@@ -1,8 +1,7 @@
-// Import weapons data
-import { weapons } from './weapons.js';
-
-// Import shop data
-import { shopInventory, displayShopItems, purchaseItem } from './shop.js';
+// Load weapon definitions
+const script = document.createElement("script");
+script.src = "weapons.js";
+document.head.appendChild(script);
 
 // Function to handle attack when the button is clicked
 function attack() {
@@ -55,34 +54,14 @@ function calculateDamage() {
   return Math.floor(Math.random() * 3) + 1; // Player starts with fists, dealing 1-3 damage
 }
 
-// Function to update player information (including souls)
-function updatePlayerInfo() {
-  document.getElementById("player-name").innerText = player.name;
-  document.getElementById("player-hp").innerText = player.hp;
-  document.getElementById("player-souls").innerText = player.souls;
-  document.getElementById("player-level").innerText = player.level;
-  document.getElementById("player-exp").innerText = player.exp;
-}
+// Load player information
+updatePlayerInfo();
 
-// Shop functionality
+// Load enemy information
+const randomEnemy = enemies[Math.floor(Math.random() * enemies.length)];
+document.getElementById("enemy-name").innerText = randomEnemy.name;
+document.getElementById("enemy-hp").innerText = randomEnemy.hp;
 
-// Open the shop modal
-const shopBtn = document.getElementById("shopBtn");
-const shopModal = document.getElementById("shopModal");
-shopBtn.addEventListener("click", () => {
-  displayShopItems(); // Display available items in the shop
-  shopModal.style.display = "block";
-});
-
-// Close the shop modal when the user clicks outside of it
-window.addEventListener("click", (event) => {
-  if (event.target == shopModal) {
-    shopModal.style.display = "none";
-  }
-});
-
-// Close the shop modal when the user clicks the close button
-const closeBtn = document.querySelector(".close");
-closeBtn.addEventListener("click", () => {
-  shopModal.style.display = "none";
-});\
+// Load player's weapon and armor
+document.getElementById("player-weapon").innerText = "Fists";
+document.getElementById("player-armor").innerText = "None";
