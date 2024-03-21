@@ -1,12 +1,16 @@
 // Define weapons information
 const weapons = [
   {
+    name: "Fists",
+    damage: { min: 1, max: 3 },
+  },
+  {
     name: "Sword",
-    damage: 10,
+    damage: { min: 5, max: 10 },
   },
   {
     name: "Axe",
-    damage: 12,
+    damage: { min: 7, max: 12 },
   },
   // Add more weapons as needed
 ];
