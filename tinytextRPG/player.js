@@ -1,6 +1,5 @@
-// Define player information including souls
 const player = {
-  name: "Player",
+  name: "Fallen King",
   hp: 100,
   souls: 0, // Initialize souls
 };
