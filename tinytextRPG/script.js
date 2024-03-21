@@ -3,6 +3,11 @@ const script = document.createElement("script");
 script.src = "weapons.js";
 document.head.appendChild(script);
 
+// Load shop data
+const shopScript = document.createElement("script");
+shopScript.src = "shop.js";
+document.head.appendChild(shopScript);
+
 // Function to handle attack when the button is clicked
 function attack() {
   const initialEnemyHP = parseInt(document.getElementById("enemy-hp").innerText);
@@ -67,4 +72,21 @@ function updatePlayerInfo() {
 
 // Open the shop modal
 const shopBtn = document.getElementById("shopBtn");
-const shopModal = document
+const shopModal = document.getElementById("shopModal");
+shopBtn.addEventListener("click", () => {
+  displayShopItems(); // Display available items in the shop
+  shopModal.style.display = "block";
+});
+
+// Close the shop modal when the user clicks outside of it
+window.addEventListener("click", (event) => {
+  if (event.target == shopModal) {
+    shopModal.style.display = "none";
+  }
+});
+
+// Close the shop modal when the user clicks the close button
+const closeBtn = document.querySelector(".close");
+closeBtn.addEventListener("click", () => {
+  shopModal.style.display = "none";
+});
