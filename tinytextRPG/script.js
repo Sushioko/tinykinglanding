@@ -1,3 +1,51 @@
+// Define an array to store the log entries
+const logEntries = [];
+
+// Function to log the action
+function logAction(action) {
+  // Add the action to the beginning of the log entries array
+  logEntries.unshift(action);
+
+  // Limit the log to the last 5 entries
+  if (logEntries.length > 5) {
+    logEntries.pop(); // Remove the oldest entry
+  }
+
+  // Update the log display
+  updateLogDisplay();
+}
+
+// Function to update the log display
+function updateLogDisplay() {
+  const logElement = document.getElementById("log");
+  logElement.innerHTML = ""; // Clear the log display
+
+  // Iterate through the log entries and add them to the log display
+  logEntries.forEach(entry => {
+    const p = document.createElement("p");
+    p.textContent = entry;
+    logElement.appendChild(p);
+  });
+}
+
+// Function to log an attack
+function logAttack(attacker, defender, damage) {
+  const action = `${attacker} attacked ${defender} for ${damage} damage.`;
+  logAction(action);
+}
+
+// Function to log soul gain
+function logSoulGain(amount) {
+  const action = `Player gained ${amount} souls.`;
+  logAction(action);
+}
+
+// Function to log level up
+function logLevelUp(level) {
+  const action = `Player leveled up to level ${level}!`;
+  logAction(action);
+}
+
 // Function to perform player's attack
 function playerAttack() {
   const playerDamage = calculateDamage();
@@ -14,7 +62,8 @@ function playerAttack() {
   if (currentEnemyHP <= 0) {
     const soulsGained = Math.abs(currentEnemyHP); // Calculate souls gained from negative health
     addSouls(soulsGained); // Give the player souls
-    logElement.innerHTML += `<p>You defeated ${randomEnemy.name} and gained ${soulsGained} souls!</p>`;
+    logSoulGain(soulsGained);
+    logAction(`You defeated ${randomEnemy.name} and gained ${soulsGained} souls!`);
     document.getElementById("actions").innerHTML = "";
     return; // Exit attack function early
   }
@@ -34,7 +83,7 @@ function enemyAttack() {
 
   // Check for player defeat
   if (currentPlayerHP <= 0) {
-    logElement.innerHTML += `<p>You were defeated!</p>`;
+    logAction("You were defeated!");
     document.getElementById("actions").innerHTML = "";
     return; // Exit attack function early
   }
