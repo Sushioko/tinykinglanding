@@ -46,7 +46,7 @@ function enemyAttack() {
 
 // Function to calculate damage
 function calculateDamage() {
-  return Math.floor(Math.random() * 10) + 1;
+  return Math.floor(Math.random() * 3) + 1; // Player starts with fists, dealing 1-3 damage
 }
 
 // Load player information
@@ -56,3 +56,7 @@ updatePlayerInfo();
 const randomEnemy = enemies[Math.floor(Math.random() * enemies.length)];
 document.getElementById("enemy-name").innerText = randomEnemy.name;
 document.getElementById("enemy-hp").innerText = randomEnemy.hp;
+
+// Load player's weapon and armor
+document.getElementById("player-weapon").innerText = "Fists";
+document.getElementById("player-armor").innerText = "None";
