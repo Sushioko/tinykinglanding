@@ -1,49 +1,11 @@
-// Define an array to store the log entries
-const logEntries = [];
+// Function to handle attack when the button is clicked
+function attack() {
+  const initialEnemyHP = parseInt(document.getElementById("enemy-hp").innerText);
 
-// Function to log the action
-function logAction(action) {
-  // Add the action to the beginning of the log entries array
-  logEntries.unshift(action);
-
-  // Limit the log to the last 5 entries
-  if (logEntries.length > 5) {
-    logEntries.pop(); // Remove the oldest entry
+  playerAttack();
+  if (initialEnemyHP > 0) {
+    enemyAttack();
   }
-
-  // Update the log display
-  updateLogDisplay();
-}
-
-// Function to update the log display
-function updateLogDisplay() {
-  const logElement = document.getElementById("log");
-  logElement.innerHTML = ""; // Clear the log display
-
-  // Iterate through the log entries and add them to the log display
-  logEntries.forEach(entry => {
-    const p = document.createElement("p");
-    p.textContent = entry;
-    logElement.appendChild(p);
-  });
-}
-
-// Function to log an attack
-function logAttack(attacker, defender, damage) {
-  const action = `${attacker} attacked ${defender} for ${damage} damage.`;
-  logAction(action);
-}
-
-// Function to log soul gain
-function logSoulGain(amount) {
-  const action = `Player gained ${amount} souls.`;
-  logAction(action);
-}
-
-// Function to log level up
-function logLevelUp(level) {
-  const action = `Player leveled up to level ${level}!`;
-  logAction(action);
 }
 
 // Function to perform player's attack
@@ -89,15 +51,9 @@ function enemyAttack() {
   }
 }
 
-// Function to calculate damage
-function calculateDamage() {
-  return Math.floor(Math.random() * 10) + 1;
-}
-
-// Function to handle attack when the button is clicked
-function attack() {
-  playerAttack();
-  enemyAttack();
+// Function to log a level up
+function logLevelUp(level) {
+  logAction(`Player leveled up to level ${level}!`);
 }
 
 // Load player information
