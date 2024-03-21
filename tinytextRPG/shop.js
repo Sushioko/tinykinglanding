@@ -1,5 +1,5 @@
-// Define shop inventory
-const shopInventory = [
+// Define shop inventory if it's not already defined
+const shopInventory = shopInventory || [
   { name: "Sword", price: 20, type: "weapon" },
   { name: "Shield", price: 15, type: "armor" }
   // Add more items as needed
