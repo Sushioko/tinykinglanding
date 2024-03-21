@@ -45,6 +45,12 @@ function calculateDamage() {
   return Math.floor(Math.random() * 10) + 1;
 }
 
+// Function to handle attack when the button is clicked
+function attack() {
+  playerAttack();
+  enemyAttack();
+}
+
 // Load player information
 updatePlayerInfo();
 
