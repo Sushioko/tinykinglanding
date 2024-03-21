@@ -1,12 +1,8 @@
-// Load weapon definitions
-const script = document.createElement("script");
-script.src = "weapons.js";
-document.head.appendChild(script);
+// Import weapons data
+import { weapons } from './weapons.js';
 
-// Load shop data
-const shopScript = document.createElement("script");
-shopScript.src = "shop.js";
-document.head.appendChild(shopScript);
+// Import shop data
+import { shopInventory, displayShopItems, purchaseItem } from './shop.js';
 
 // Function to handle attack when the button is clicked
 function attack() {
@@ -89,4 +85,4 @@ window.addEventListener("click", (event) => {
 const closeBtn = document.querySelector(".close");
 closeBtn.addEventListener("click", () => {
   shopModal.style.display = "none";
-});
+});\
