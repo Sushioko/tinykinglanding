@@ -56,11 +56,3 @@ updatePlayerInfo();
 const randomEnemy = enemies[Math.floor(Math.random() * enemies.length)];
 document.getElementById("enemy-name").innerText = randomEnemy.name;
 document.getElementById("enemy-hp").innerText = randomEnemy.hp;
-
-// Load weapons information
-const weaponsList = document.getElementById("weapons-list");
-weapons.forEach(weapon => {
-  const li = document.createElement("li");
-  li.textContent = `${weapon.name} (Damage: ${weapon.damage})`;
-  weaponsList.appendChild(li);
-});
