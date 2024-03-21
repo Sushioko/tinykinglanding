@@ -1,7 +1,7 @@
 // Define shop inventory
 const shopInventory = [
   { name: "Sword", price: 20, type: "weapon" },
-  { name: "Shield", price: 15, type: "armor" },
+  { name: "Shield", price: 15, type: "armor" }
   // Add more items as needed
 ];
 
