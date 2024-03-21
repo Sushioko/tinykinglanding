@@ -18,14 +18,10 @@ function playerAttack() {
   currentEnemyHP -= playerDamage;
   enemyHPElement.innerText = Math.max(0, currentEnemyHP); // Prevent negative health
 
-  logAttack(player.name, randomEnemy.name, playerDamage);
-
   // Check for enemy defeat
   if (currentEnemyHP <= 0) {
     const soulsGained = Math.abs(currentEnemyHP); // Calculate souls gained from negative health
     addSouls(soulsGained); // Give the player souls
-    logSoulGain(soulsGained);
-    logAction(`You defeated ${randomEnemy.name} and gained ${soulsGained} souls!`);
     document.getElementById("actions").innerHTML = "";
     return; // Exit attack function early
   }
@@ -41,19 +37,16 @@ function enemyAttack() {
   currentPlayerHP -= enemyDamage;
   playerHPElement.innerText = Math.max(0, currentPlayerHP); // Prevent negative health
 
-  logAttack(randomEnemy.name, player.name, enemyDamage);
-
   // Check for player defeat
   if (currentPlayerHP <= 0) {
-    logAction("You were defeated!");
     document.getElementById("actions").innerHTML = "";
     return; // Exit attack function early
   }
 }
 
-// Function to log a level up
-function logLevelUp(level) {
-  logAction(`Player leveled up to level ${level}!`);
+// Function to calculate damage
+function calculateDamage() {
+  return Math.floor(Math.random() * 10) + 1;
 }
 
 // Load player information
