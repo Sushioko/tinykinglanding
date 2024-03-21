@@ -7,6 +7,6 @@ const enemies = [
   {
     name: "Skeleton",
     hp: 60,
-  },
+  }
   // Add more enemies as needed
 ];
