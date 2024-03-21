@@ -32,7 +32,21 @@
     <div id="actions">
       <button onclick="attack()">Attack</button>
     </div>
+
+    <!-- Shop Modal -->
+    <div id="shopModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Shop</h2>
+        <ul id="shopItems">
+          <!-- Shop items will be dynamically added here -->
+        </ul>
+      </div>
+    </div>
   </div>
+
+  <!-- Button to open the shop modal -->
+  <button id="shopBtn">Shop</button>
 
   <script src="player.js"></script>
   <script src="enemy.js"></script>
